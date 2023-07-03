@@ -1,0 +1,8 @@
+
+from randomize_transform_addon.adapter.bpy.operator import RandomizeTransformOperator
+from randomize_transform_addon.adapter.uniform_randomizer import UniformRandomizer
+
+from randomize_transform_addon.domain.transform_action import BaseRandomAction
+
+BaseRandomAction.randomizer = UniformRandomizer
+RandomizeTransformOperator.randomizer = UniformRandomizer
