@@ -39,3 +39,7 @@ class RandomTransformPanel(RootPanel, bpy.types.Panel):
         self._draw_transform_property(layout, "Location", context.scene.randomize_location_property_group)
         self._draw_transform_property(layout, "Rotation", context.scene.randomize_rotation_property_group)
         self._draw_transform_property(layout, "Scale", context.scene.randomize_scale_property_group)
+
+    @classmethod
+    def poll(cls, context):
+        return len(context.selected_objects) > 0

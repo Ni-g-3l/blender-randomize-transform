@@ -25,7 +25,7 @@ class ScaleRangeProperty(bpy.types.PropertyGroup):
 
     min_range_value = 0
     max_range_value = 1
-    
+
     min: bpy.props.FloatProperty(name='min', min=min_range_value, max=max_range_value,
                                  soft_min=min_range_value, soft_max=max_range_value,
                                  default=min_range_value, precision=0)
@@ -46,7 +46,7 @@ class LocationRangeProperty(bpy.types.PropertyGroup):
 
     min_range_value = 0
     max_range_value = 10
-    
+
     min: bpy.props.FloatProperty(name='min', min=min_range_value, max=max_range_value,
                                  soft_min=min_range_value, soft_max=max_range_value,
                                  default=min_range_value, precision=2)
@@ -64,8 +64,12 @@ class RandomizeLocationProperty(bpy.types.PropertyGroup):
     z: bpy.props.PointerProperty(type=AxeLocationProperty)
 
 
-
 def register():
     bpy.types.Scene.randomize_scale_property_group = bpy.props.PointerProperty(type=RandomizeScaleProperty)
     bpy.types.Scene.randomize_location_property_group = bpy.props.PointerProperty(type=RandomizeLocationProperty)
     bpy.types.Scene.randomize_rotation_property_group = bpy.props.PointerProperty(type=RandomizeRotationProperty)
+
+def unregister():
+    del bpy.types.Scene.randomize_scale_property_group
+    del bpy.types.Scene.randomize_location_property_group
+    del bpy.types.Scene.randomize_rotation_property_group

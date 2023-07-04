@@ -1,5 +1,4 @@
 import bpy
-import random
 
 from randomize_transform_addon.api.randomize_object_transform_service import RandomizeObjectTransformService
 
@@ -8,7 +7,6 @@ class RandomizeTransformOperator(bpy.types.Operator):
 
     bl_idname = "object.randomize_transform"
     bl_label = "Randomize Transform"
-
 
     def execute(self, context):
         # Get the selected objects
