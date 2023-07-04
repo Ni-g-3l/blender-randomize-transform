@@ -4,7 +4,6 @@ class RotationRangeProperty(bpy.types.PropertyGroup):
 
     min_range_value = 0
     max_range_value = 360
-    default_range_value = 360
 
     min: bpy.props.FloatProperty(name='min', min=min_range_value, max=max_range_value,
                                  soft_min=min_range_value, soft_max=max_range_value,
@@ -26,7 +25,6 @@ class ScaleRangeProperty(bpy.types.PropertyGroup):
 
     min_range_value = 0
     max_range_value = 1
-    default_range_value = 50
     
     min: bpy.props.FloatProperty(name='min', min=min_range_value, max=max_range_value,
                                  soft_min=min_range_value, soft_max=max_range_value,
@@ -47,15 +45,14 @@ class RandomizeScaleProperty(bpy.types.PropertyGroup):
 class LocationRangeProperty(bpy.types.PropertyGroup):
 
     min_range_value = 0
-    max_range_value = 1
-    default_range_value = 1
+    max_range_value = 10
     
     min: bpy.props.FloatProperty(name='min', min=min_range_value, max=max_range_value,
                                  soft_min=min_range_value, soft_max=max_range_value,
-                                 default=min_range_value, precision=0)
+                                 default=min_range_value, precision=2)
     max: bpy.props.FloatProperty(name='max', min=min_range_value, max=max_range_value,
                                  soft_min=min_range_value, soft_max=max_range_value,
-                                 default=max_range_value, precision=0)
+                                 default=max_range_value, precision=2)
 
 class AxeLocationProperty(bpy.types.PropertyGroup):
     enabled: bpy.props.BoolProperty(name='enabled', default=True)
